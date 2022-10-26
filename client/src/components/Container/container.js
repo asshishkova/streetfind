@@ -8,11 +8,20 @@ const Container = () => {
   const [lat, setLat] = useState(undefined);
   const [lng, setLng] = useState(undefined);
 
+  const defaultMapCenter = {
+    lat: 32.073129228535876,
+    lng: 34.780327621097534
+  }
+
+  const [mapCenter, setMapCenter] = useState(defaultMapCenter);
+
   const showModal = () => {
     setIsShown(true);
   };
   const closeModal = () => {
     setIsShown(false);
+    setLat(undefined);
+    setLng(undefined);
   };
   const onEscDown = (event) => {
     if (event.keyCode === 27) {
@@ -32,7 +41,7 @@ const Container = () => {
       ...current,
       newLatLng
     ]);
-    // setMapCenter(newLatLng); // update!!!!
+    setMapCenter(newLatLng); // update!!!!
   };
 
   const [markers, setMarkers] = useState([]);
@@ -46,10 +55,11 @@ const Container = () => {
     return (
       <React.Fragment>
         <Map
-          showModal={showModal}
           markers={markers}
           onMapClick={onMapClick}
-
+          mapCenter={mapCenter}
+          newLat={lat}
+          newLng={lng}
         />
         {isShown ? (
           <Modal
