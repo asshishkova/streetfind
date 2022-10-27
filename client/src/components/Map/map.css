@@ -3,6 +3,11 @@
   height: 800px;
 }
 
+.gm-style-moc {
+  border-radius: 12px;
+  display: none;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -25,7 +30,7 @@
   position: relative;
   top: 10px;
   padding: 0;
-  max-width: 50px;
+  width: 50px;
   height: fit-content;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -49,11 +54,18 @@
   right: 190px;
   bottom: 155px;
   padding: 10px;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  /* display: none; */
+  transition-delay: 0s;
 }
 
 .item-title:hover + .item-info {
-  display: block;
+  z-index: 9999;
+  visibility: visible;
+  opacity: 1;
+  /* display: block; */
+  transition-delay: 1s;
 }
 
 .item-photo {

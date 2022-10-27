@@ -54,7 +54,7 @@ const Container = () => {
   };
 
     return (
-      <React.Fragment>
+      <div>
         <Map
           markers={markers}
           onMapClick={onMapClick}
@@ -62,14 +62,15 @@ const Container = () => {
           newLat={lat}
           newLng={lng}
         />
-        {isShown ? (
+        {isShown &&
           <Modal
+            modalBody = 'form'
             onSubmit={onSubmit}
             closeModal={closeModal}
             onEscDown={onEscDown}
           />
-        ) : null}
-      </React.Fragment>
+        }
+      </div>
     );
   }
 

@@ -5,6 +5,7 @@ import FocusTrap from 'focus-trap-react';
 import './modal.css';
 
 export const Modal = ({
+  modalBody,
   onEscDown,
   closeModal,
   onSubmit
@@ -34,7 +35,9 @@ export const Modal = ({
             </svg>
           </button>
           <div className="modal-body">
-            <Form onSubmit={onSubmit} />
+            { modalBody === "form" &&
+              <Form onSubmit={onSubmit} />
+            }
           </div>
         </div>
       </aside>

@@ -21,6 +21,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  background-color: aliceblue;
 }
 
 *,
@@ -33,4 +34,9 @@ body {
   width: 90%;
   max-width: 700px;
   margin: 2em auto;
+}
+
+.app-title {
+  color: rgb(135, 19, 67);
+  text-align: center;
 }

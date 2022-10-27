@@ -12,15 +12,14 @@ const Map = ({ mapCenter, markers, onMapClick, newLat, newLng }) => {
       <Icon icon={locationIcon} className='item-icon' />
       <p className='item-title'>{title}</p>
       <div className='item-info'>
-        {description}
         <img src='photo-placeholder.png' className='item-photo' alt='item'/>
+        {description}
       </div>
     </div>
   )
 
   return (
     <div className='map'>
-      <h2>StreetFind</h2>
       <div className='google-map'>
         <GoogleMapReact className='cursor-pointer'
           bootstrapURLKeys={{ key: process.env.REACT_APP_API_MAP_KEY }}
