@@ -35,7 +35,8 @@ const Container = () => {
     const newLatLng = {
       lat: lat,
       lng: lng,
-      text: event.target.item.value
+      title: event.target.item.value,
+      description: event.target.description.value
     };
     setMarkers((current) => [
       ...current,
