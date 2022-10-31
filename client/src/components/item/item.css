@@ -1,0 +1,43 @@
+.item-photo {
+  max-width: 90%;
+  max-height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.item-title {
+  color: var(--main-dark-red);
+}
+
+@media screen and (min-width: 350px) {
+  .reactions {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.reaction {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.reaction-amount {
+  align-items: center;
+  margin: 10px;
+  min-width: 30px;
+}
+
+.item-info {
+  color: var(--main-dark-red);
+}
+
+.item-description {
+  font-size: 20px;
+}
+
+.update-info {
+  color: black;
+  font-style: italic;
+  margin: 0px 10px 0px 0px;
+}

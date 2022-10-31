@@ -10,18 +10,17 @@ const Map = ({ mapCenter, markers, onMapClick, newLat, newLng }) => {
   const LocationPin = ({ title, description }) => (
     <div className='pin'>
       <Icon icon={locationIcon} className='item-icon' />
-      <p className='item-title'>{title}</p>
-      <div className='item-info'>
-        <img src='photo-placeholder.png' className='item-photo' alt='item'/>
+      <p className='item-title-on-map'>{title}</p>
+      <div className='item-short-info'>
+        <img src='photo-placeholder.png' className='item-small-photo' alt='item'/>
         {description}
       </div>
     </div>
   )
 
   return (
-    <div className='map'>
       <div className='google-map'>
-        <GoogleMapReact className='cursor-pointer'
+        <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_API_MAP_KEY }}
           options={{ draggableCursor: 'default' }}
           center={mapCenter}
@@ -46,7 +45,6 @@ const Map = ({ mapCenter, markers, onMapClick, newLat, newLng }) => {
           }
         </GoogleMapReact>
       </div>
-    </div>
   )
 }
 

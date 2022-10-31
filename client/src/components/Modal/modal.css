@@ -37,20 +37,20 @@
   cursor: pointer;
   background-color: rgb(247, 237, 199);
   border-radius: 8px;
-  border-color: rgb(135, 19, 67);
+  border-color: var(--main-dark-red);
 }
 
 ._modal-close-icon {
   width: 25px;
   height: 25px;
   fill: transparent;
-  stroke: rgb(135, 19, 67);
+  stroke: var(--main-dark-red);
   stroke-linecap: round;
   stroke-width: 5;
 }
 
 .modal-body {
-  padding-top: 0.25em;
+  padding: 5px;
 }
 ._hide-visual {
   clip: rect(0 0 0 0);

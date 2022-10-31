@@ -1,20 +1,6 @@
-.form-control:focus {
-  outline: none !important;
-}
-
-.btn-primary {
-  background-color: rgb(130, 8, 59);
-  border: none;
-}
-
-.btn-primary:hover, .btn-primary:active, .btn-primary:after{
-  border: none;
-  background-color: rgb(28, 22, 24) !important;
-}
-
-.btn-primary:active {
-  box-shadow: none !important;
-  border: none !important;
+.btn-dark {
+  background-color: var(--main-dark-red);
+  /* border: none; */
 }
 
 .form-control {
@@ -22,13 +8,9 @@
 }
 
 .form-control:focus {
-  border: 1px solid rgb(130, 8, 59);
-  box-shadow: none;
-  outline: none;
-}
-
-.btn-primary:focus {
-  border: none;
+  border: 1px solid var(--main-dark-red);
+  /* box-shadow: none;
+  outline: none; */
 }
 
 .add-item {

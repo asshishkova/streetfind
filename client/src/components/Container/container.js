@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Modal } from '../Modal/modal';
-import Map from '../Map/map';
+import { Modal } from '../modal/modal';
+import Map from '../map/map';
 
 const Container = () => {
 
   const [isShown, setIsShown] = useState(false);
   const [lat, setLat] = useState(undefined);
   const [lng, setLng] = useState(undefined);
+  const [modalBody, setModalBody] = useState("form");
 
   const defaultMapCenter = {
     lat: 32.073129228535876,
@@ -15,7 +16,8 @@ const Container = () => {
 
   const [mapCenter, setMapCenter] = useState(defaultMapCenter);
 
-  const showModal = () => {
+  const showModal = (formOrItem) => {
+    setModalBody(formOrItem);
     setIsShown(true);
   };
   const closeModal = () => {
@@ -48,9 +50,14 @@ const Container = () => {
   const [markers, setMarkers] = useState([]);
 
   const onMapClick = (e) => {
-    setLat(e.lat);
-    setLng(e.lng);
-    showModal();
+    if (e.event.target.className !== "item-title-on-map") {
+      setLat(e.lat);
+      setLng(e.lng);
+      showModal("form");
+    } else {
+      showModal("item");
+      console.log(e.event);
+    }
   };
 
     return (
@@ -64,7 +71,7 @@ const Container = () => {
         />
         {isShown &&
           <Modal
-            modalBody = 'form'
+            modalBody = {modalBody}
             onSubmit={onSubmit}
             closeModal={closeModal}
             onEscDown={onEscDown}
