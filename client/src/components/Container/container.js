@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Modal } from '../modal/modal';
-import Map from '../map/map';
+import React, { useState } from "react";
+import { Modal } from "../modal/modal";
+import Map from "../map/map";
 
 const Container = () => {
 
@@ -43,7 +43,7 @@ const Container = () => {
       id: itemId,
       stillThereAmount: 1,
       notThereAmount: 0,
-      lastUpdate: "still there",
+      lastUpdate: "'still there'",
       sameInRow: 1
     };
     setMarkers((current) => [

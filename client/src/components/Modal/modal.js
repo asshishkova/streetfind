@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Form } from '../form/form';
-import { Item } from '../item/item';
-import FocusTrap from 'focus-trap-react';
-import './modal.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Form } from "../form/form";
+import { Item } from "../item/item";
+import FocusTrap from "focus-trap-react";
+import "./modal.css";
 
 export const Modal = ({
   modalBody,
