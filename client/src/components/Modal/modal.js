@@ -9,7 +9,8 @@ export const Modal = ({
   modalBody,
   onEscDown,
   closeModal,
-  onSubmit
+  onSubmit,
+  currentItem
 }) => {
   return ReactDOM.createPortal(
     <FocusTrap>
@@ -40,7 +41,7 @@ export const Modal = ({
               <Form onSubmit={onSubmit} />
             }
             { modalBody === "item" &&
-              <Item />
+              <Item item={currentItem}/>
             }
           </div>
         </div>

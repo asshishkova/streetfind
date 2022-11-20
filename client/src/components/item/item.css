@@ -15,6 +15,9 @@
     display: flex;
     justify-content: space-between;
   }
+  /* .update-info {
+    min-width: none;
+  } */
 }
 
 .reaction {
@@ -40,4 +43,5 @@
   color: black;
   font-style: italic;
   margin: 0px 10px 0px 0px;
+  /* min-width: 200px; */
 }

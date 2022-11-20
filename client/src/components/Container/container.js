@@ -15,6 +15,7 @@ const Container = () => {
   }
 
   const [mapCenter, setMapCenter] = useState(defaultMapCenter);
+  const [itemId, setItemId] = useState(0);
 
   const showModal = (formOrItem) => {
     setModalBody(formOrItem);
@@ -38,16 +39,23 @@ const Container = () => {
       lat: lat,
       lng: lng,
       title: event.target.item.value,
-      description: event.target.description.value
+      description: event.target.description.value,
+      id: itemId,
+      stillThereAmount: 1,
+      notThereAmount: 0,
+      lastUpdate: "still there",
+      sameInRow: 1
     };
     setMarkers((current) => [
       ...current,
       newLatLng
     ]);
-    setMapCenter(newLatLng); // update!!!!
+    setMapCenter(newLatLng);
+    setItemId(itemId + 1);
   };
 
   const [markers, setMarkers] = useState([]);
+  const [currentItem, setCurrentItem] = useState(undefined);
 
   const onMapClick = (e) => {
     if (e.event.target.className !== "item-title-on-map") {
@@ -55,8 +63,8 @@ const Container = () => {
       setLng(e.lng);
       showModal("form");
     } else {
+      setCurrentItem(markers.find(item => item.id.toString() === e.event.target.parentNode.id));
       showModal("item");
-      console.log(e.event);
     }
   };
 
@@ -75,6 +83,7 @@ const Container = () => {
             onSubmit={onSubmit}
             closeModal={closeModal}
             onEscDown={onEscDown}
+            currentItem={currentItem}
           />
         }
       </div>
