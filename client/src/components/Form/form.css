@@ -18,3 +18,24 @@ text-align: center;
 font-size: 24px;
 margin-bottom: 15px;
 }
+
+.selectedImage img {
+  width: 90%;
+}
+
+.selectedImage .btn {
+  width: 10%;
+}
+
+.selectedImage {
+  display: flex;
+}
+
+.btn-remove {
+  border-radius: 0px;
+  display: flex;
+  justify-content: center;
+}
+.btn-remove:hover {
+  background-color: rgb(187, 186, 186);
+}

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./item.css";
 
-const STILL_THERE = "'still there'";
-const NOT_THERE = "'not there'";
+const STILL_THERE = "still there";
+const NOT_THERE = "not there";
 
 export const Item = ({item}) => {
   const {title, description, stillThereAmount, notThereAmount, lastUpdate, sameInRow} = item;
