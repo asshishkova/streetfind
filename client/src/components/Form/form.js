@@ -2,31 +2,16 @@ import React, { useState } from "react";
 import "./form.css";
 
 export const Form = ({ onSubmit }) => {
-
-
-  // return (
-    <div>
-      <h1>Upload and Display Image usign React Hook's</h1>
-
-
-      <br />
-
-    </div>
-  // );
-
   const [selectedImage, setSelectedImage] = useState(null);
-
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={(event) => onSubmit(event, selectedImage)}>
       <h2 className="add-item">Add a new item to the map</h2>
       <input placeholder="What is there?" autoFocus className="form-control" id="item" required/>
       { !selectedImage &&
         <input
           type="file"
           className="form-control btn"
-          name="myImage"
           onChange={(event) => {
-            console.log(event.target.files[0]);
             setSelectedImage(event.target.files[0]);
           }}
         />

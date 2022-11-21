@@ -5,7 +5,7 @@ const STILL_THERE = "still there";
 const NOT_THERE = "not there";
 
 export const Item = ({item}) => {
-  const {title, description, stillThereAmount, notThereAmount, lastUpdate, sameInRow} = item;
+  const {title, picture, description, stillThereAmount, notThereAmount, lastUpdate, sameInRow} = item;
 
   const [stillThereAmountShown, setStillThereAmount] = useState(stillThereAmount);
   const [notThereAmountShown, setNotThereAmount] = useState(notThereAmount);
@@ -35,10 +35,12 @@ export const Item = ({item}) => {
     item.sameInRow = sameInRow;
   }
 
+  const imgSourse = picture ? URL.createObjectURL(picture) : "photo-placeholder.png";
+
   return (
     <div className="item-info">
       <h2 className="item-title">{title}</h2>
-      <img src="photo-placeholder.png" className="item-photo" alt="item"/>
+      <img src={imgSourse} className="item-photo" alt="item"/>
       <p className="item-description">{description}</p>
       <div className="reactions">
         <div className="reaction">

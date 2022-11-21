@@ -32,13 +32,14 @@ const Container = () => {
     }
   };
 
-  const onSubmit = (event) => {
+  const onSubmit = (event, selectedImage) => {
     event.preventDefault(event);
     closeModal();
     const newLatLng = {
       lat: lat,
       lng: lng,
       title: event.target.item.value,
+      picture: selectedImage,
       description: event.target.description.value,
       id: itemId,
       stillThereAmount: 1,
